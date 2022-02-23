@@ -18,7 +18,7 @@ inFolder = r"c:\data\shapefiles"
 outFolder = r"c:\data\shapefiles_clipped"
 
 # SHP file you want to clip the other SHPs with
-ClipFeat = r"c:\data\aoi_extent.shp"
+clipFeat = r"c:\data\aoi_extent.shp"
 #######################################################################################################################
 
 # get a list of all the shapefiles in the input folder
@@ -35,7 +35,7 @@ for shp in shp_list:
 
     # utilize arcpy to clip the input shapefile to the extent of the clipFeat
     arcpy.Clip_analysis(in_features=shp,
-                        clip_features=ClipFeat,
+                        clip_features=clipFeat,
                         out_feature_class=outFile)
 
     # print the file which was clipped
